@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Manager - Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css"> </head>
+<body>
+    <div class="login-container"> <h2>Cadastre-se</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="newUsername">Usuário:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Senha:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar Senha:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <button type="submit">Cadastrar</button>
+            <p id="registerMessage"></p>
+        </form>
+        <p class="mt-20">Já tem uma conta? <a href="index.html">Faça Login</a></p>
+    </div>
+
+    <script src="js/register.js"></script>
+</body>
+</html>

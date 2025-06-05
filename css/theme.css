@@ -1,0 +1,417 @@
+/* public/css/theme.css */
+
+:root {
+    --color-nearly-black: #0C0A0F;
+    --color-very-light-gray: #DEDFE1;
+    --color-terracotta-red: #95402B;
+    --color-dark-blue-gray-v2: #35414F;
+
+    --primary-color: var(--color-terracotta-red);
+    --primary-dark: #7b3523;
+    --secondary-color: var(--color-dark-blue-gray-v2);
+    --accent-color: var(--color-terracotta-red);
+
+    --text-color-dark: var(--color-nearly-black);
+    --text-color-light: var(--color-dark-blue-gray-v2);
+    --text-color-on-dark: #ffffff;
+
+    --bg-color-main: var(--color-very-light-gray);
+    --bg-color-element: #ffffff;
+    --bg-color-light-hover: #eaf0f2;
+    --bg-color-darker-elements: var(--color-very-light-gray);
+
+    --border-color: #c9ccd3;
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-color-main);
+    color: var(--text-color-dark);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-container, .admin-container {
+    background-color: var(--bg-color-element);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+.admin-container {
+    max-width: 1000px;
+    text-align: left;
+}
+
+.login-container:hover, .admin-container:hover {
+    transform: translateY(-5px);
+}
+
+h2, h3 {
+    color: var(--secondary-color);
+    margin-bottom: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-color-light);
+    margin-bottom: 8px;
+    display: block;
+    font-size: 0.95em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--text-color-dark);
+    background-color: var(--bg-color-element);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(149, 64, 43, 0.2);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color-on-dark);
+    padding: 14px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow-light);
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+.error-message {
+    color: var(--primary-color);
+    background-color: #fcece8;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 15px;
+    animation: fadeIn 0.5s;
+    border: 1px solid var(--primary-color);
+}
+
+.success-message {
+    color: #4CAF50;
+    background-color: #e8f5e9;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 15px;
+    animation: fadeIn 0.5s;
+    border: 1px solid #4CAF50;
+}
+
+.info-message {
+    color: var(--text-color-light);
+    background-color: #edf1f4;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 15px;
+    animation: fadeIn 0.5s;
+    border: 1px solid var(--color-dark-blue-gray-v2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.app-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    filter: drop-shadow(0 0 8px rgba(184, 195, 217, 0.7));
+}
+
+.app-logo-small {
+    width: 80px;
+    height: auto;
+    margin-right: 15px;
+    filter: drop-shadow(0 0 5px rgba(184, 195, 217, 0.7));
+}
+
+.admin-container {
+    padding: 50px;
+}
+
+.admin-container .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-container .header #logoutButton {
+    background-color: var(--secondary-color);
+    color: var(--text-color-on-dark);
+    padding: 8px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.admin-container .header #logoutButton:hover {
+    background-color: var(--color-nearly-black);
+    transform: translateY(-2px);
+}
+
+.admin-container .header h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.admin-container .header h2 #welcomeMessage {
+    display: block;
+    font-size: 0.7em;
+    font-weight: normal;
+    color: var(--text-color-light);
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .admin-container .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .admin-container .header .app-logo-small {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .admin-container .header #logoutButton {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
+.game-list table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 25px;
+    box-shadow: var(--shadow-light);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.game-list th, .game-list td {
+    padding: 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 15px;
+    color: var(--text-color-dark);
+}
+
+.game-list th {
+    background-color: var(--color-dark-blue-gray-v2);
+    color: var(--text-color-on-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+}
+
+.game-list tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+.game-list tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.game-list tr:nth-child(even) {
+    background-color: var(--bg-color-darker-elements);
+}
+
+.game-list tr:hover {
+    background-color: var(--bg-color-light-hover);
+    transition: background-color 0.3s ease;
+}
+
+.game-list tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.game-list .actions button {
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 6px;
+    box-shadow: none;
+    margin-right: 8px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.game-list .actions .edit-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-on-dark);
+}
+.game-list .actions .edit-btn:hover {
+    background-color: var(--color-nearly-black);
+}
+
+.game-list .actions .delete-btn {
+    background-color: var(--primary-color);
+}
+.game-list .actions .delete-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.add-game-form {
+    background-color: var(--bg-color-element);
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    margin-top: 35px;
+    border: 1px solid var(--border-color);
+}
+
+.tabs-navigation {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+    justify-content: flex-start;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color-light);
+    cursor: pointer;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-right: 10px;
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+}
+
+.tab-button:hover {
+    color: var(--secondary-color);
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.played-games-list {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.played-games-list table {
+    width: 100%;
+    margin-top: 15px;
+}
+.played-games-list th, .played-games-list td {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-color);
+    text-align: left;
+}
+.played-games-list th {
+    background-color: var(--color-dark-blue-gray-v2);
+    color: var(--text-color-on-dark);
+}
+.played-games-list tr:nth-child(even) {
+    background-color: var(--bg-color-darker-elements);
+}
+.played-games-list tr:hover {
+    background-color: var(--bg-color-light-hover);
+}
+.played-games-list tbody tr:last-child td {
+    border-bottom: none;
+}
+
+input[list] {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+    color: var(--text-color-dark);
+    background-color: var(--bg-color-element);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+input[list]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(149, 64, 43, 0.2);
+}
+
+#noPlayedGamesMessage {
+    color: var(--text-color-light);
+    font-style: italic;
+    margin-top: 15px;
+    text-align: center;
+}

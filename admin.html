@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <img src="img/logo.png" alt="Logo Game Manager" class="app-logo-small"><h2><span id="welcomeMessage"></span></h2>
+            <button id="logoutButton">Sair</button>
+        </div>
+
+        <div class="tabs-navigation">
+            <button class="tab-button active" data-tab="manageGames">Gerenciar Jogos</button>
+            <button class="tab-button" data-tab="playedGames">Meus Jogos</button>
+        </div>
+
+        <div id="manageGames" class="tab-content active">
+            <div class="add-game-form">
+                <h4>Adicionar/Editar Jogo</h4>
+                <form id="gameForm">
+                    <input type="hidden" id="gameId">
+                    <div class="form-group">
+                        <label for="title">Título:</label>
+                        <input type="text" id="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Gênero:</label>
+                        <input type="text" id="genre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="releaseYear">Ano de Lançamento:</label>
+                        <input type="number" id="releaseYear" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="platform">Plataforma:</label>
+                        <input type="text" id="platform" required>
+                    </div>
+                    <button type="submit" id="saveGameButton">Adicionar Jogo</button>
+                </form>
+                <p id="formMessage"></p>
+            </div>
+
+            <div class="game-list">
+                <h3>Lista de Jogos</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Gênero</th>
+                            <th>Ano</th>
+                            <th>Plataforma</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gamesTableBody">
+                        </tbody>
+                </table>
+                <p id="listMessage"></p>
+            </div>
+        </div> <div id="playedGames" class="tab-content">
+            <h3>Meus Jogos Jogados</h3>
+            <p>Esta é uma área para você registrar e ver os jogos que já jogou.</p>
+            
+            <div class="form-group">
+                <label for="playedGameTitle">Título do Jogo Jogado:</label>
+                <input type="text" id="playedGameTitle" list="gameTitlesList">
+                <datalist id="gameTitlesList"></datalist>
+            </div>
+            
+            <div class="form-group">
+                <label for="rating">Sua Nota (1-5):</label>
+                <input type="number" id="rating" min="1" max="5">
+            </div>
+            <button id="addPlayedGameButton">Adicionar Jogo Jogado</button>
+            <p id="playedGameMessage"></p>
+
+            <div class="played-games-list">
+                <h4>Sua Lista de Jogos Jogados</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Nota</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="playedGamesTableBody">
+                        </tbody>
+                </table>
+                <p id="noPlayedGamesMessage"></p>
+            </div>
+        </div> </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
