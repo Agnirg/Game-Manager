@@ -60,7 +60,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Estas classes são sobrescritas pelo theme.css, mas mantidas por compatibilidade */
+
 .error-message {
     color: red;
     margin-top: 10px;
