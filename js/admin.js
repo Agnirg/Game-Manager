@@ -1,5 +1,3 @@
-// public/js/admin.js
-
 const gamesTableBody = document.getElementById('gamesTableBody');
 const gameForm = document.getElementById('gameForm');
 const gameIdInput = document.getElementById('gameId');
@@ -239,7 +237,7 @@ addPlayedGameButton.addEventListener('click', () => {
     const rating = parseInt(ratingInput.value);
 
     if (!title || isNaN(rating) || rating < 1 || rating > 5) {
-        showMessage(playedGameMessage, 'Por favor, preencha o título do jogo e uma nota válida (1-5).', 'error');
+        showMessage(playedGameMessage, 'Por favor, preencha o título do jogo e uma nota válida (1-10).', 'error');
         return;
     }
 
