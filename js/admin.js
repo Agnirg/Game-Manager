@@ -220,7 +220,7 @@ function loadPlayedGames() {
         const row = playedGamesTableBody.insertRow();
         row.innerHTML = `
             <td>${game.title}</td>
-            <td>${game.rating} / 5</td>
+            <td>${game.rating} / 10</td>
             <td class="actions">
                 <button class="delete-played-game-btn" data-id="${game.id}">Remover</button>
             </td>
