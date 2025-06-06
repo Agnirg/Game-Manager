@@ -236,7 +236,7 @@ addPlayedGameButton.addEventListener('click', () => {
     const title = playedGameTitleInput.value.trim();
     const rating = parseInt(ratingInput.value);
 
-    if (!title || isNaN(rating) || rating < 1 || rating > 5) {
+    if (!title || isNaN(rating) || rating < 1 || rating > 10) {
         showMessage(playedGameMessage, 'Por favor, preencha o título do jogo e uma nota válida (1-10).', 'error');
         return;
     }
